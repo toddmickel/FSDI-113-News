@@ -31,12 +31,18 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".herokuapp.com"]
 # Application definition
 
 INSTALLED_APPS = [
+    # Core apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third party apps
+    'crispy_forms',
+
+    # Local apps
     'accounts',
     'pages',
 ]
@@ -130,3 +136,7 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
