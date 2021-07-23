@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # Local apps
     'accounts',
+    'articles',
     'pages',
 ]
 
@@ -113,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Denver'
 
 USE_I18N = True
 
@@ -139,4 +140,10 @@ LOGOUT_REDIRECT_URL = 'home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+DEFAULT_FROM_EMAIL = 'reset@toddmickel.com'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
